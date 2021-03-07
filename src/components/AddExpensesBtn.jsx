@@ -52,11 +52,17 @@ class AddExpensesBtn extends Component {
     const {
       fetchExchangeRates,
       setAddition,
+      value,
+      currency,
     } = this.props;
 
-    await fetchExchangeRates();
-    await this.getLastExpenseId();
-    await setAddition();
+    if (value !== '' && currency !== '') {
+      await fetchExchangeRates();
+      await this.getLastExpenseId();
+      await setAddition();
+    } else {
+      alert('Por favor, inserir Valor e Moeda!');
+    }
   }
 
   handleEdition() {
@@ -134,6 +140,8 @@ AddExpensesBtn.propTypes = {
   editionOfExpense: PropTypes.bool.isRequired,
   aprovedEdition: PropTypes.func.isRequired,
   editExpense: PropTypes.func.isRequired,
+  value: PropTypes.string.isRequired,
+  currency: PropTypes.string.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddExpensesBtn);

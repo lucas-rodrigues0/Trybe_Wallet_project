@@ -83,7 +83,7 @@ class ExpensesInput extends Component {
           <CurrenciesSelection value={ currency } changeInput={ this.changeInput } />
           <MethodSelection value={ method } changeInput={ this.changeInput } />
           <TagSelection value={ tag } changeInput={ this.changeInput } />
-          <AddExpensesBtn resetInputs={ this.resetInputs } />
+          <AddExpensesBtn resetInputs={ this.resetInputs } value={ value } currency={ currency } />
         </section>
         <section>
           <ExpensesTable editExpenseValue={ this.editExpenseValue } />

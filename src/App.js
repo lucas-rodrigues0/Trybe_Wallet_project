@@ -12,8 +12,8 @@ export default class App extends Component {
       <main className="main-container">
         <h2 className="header-style">Trybewallet - project</h2>
         <Switch>
-          <Route exact path="/" component={ Login } />
-          <Route path="/carteira" component={ Wallet } />
+          <Route exact path="/Trybe_Wallet_project" component={ Login } />
+          <Route path="/Trybe_Wallet_project/carteira" component={ Wallet } />
         </Switch>
       </main>
     );
