@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 
 import Login from './pages/Login';
 import Wallet from './pages/Wallet';
@@ -12,7 +12,8 @@ export default class App extends Component {
       <main className="main-container">
         <h2 className="header-style">Trybewallet - project</h2>
         <Switch>
-          <Route exact path="/Trybe_Wallet_project" component={ Login } />
+          <Redirect exact from="/Trybe_Wallet_project" to="/Trybe_Wallet_project/login" />
+          <Route path="/Trybe_Wallet_project/login" component={ Login } />
           <Route path="/Trybe_Wallet_project/carteira" component={ Wallet } />
         </Switch>
       </main>
